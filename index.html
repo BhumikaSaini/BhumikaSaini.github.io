@@ -1,25 +1,267 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <title>Bhumika Saini</title>
-    <meta charset="utf-8" />
-    <meta name="description" content="Bhumika Saini's website" />
-    <meta name="keywords" content="Bhumika Saini, Bhumika, Saini, Software Engineer, Software Developer, Software Development Engineer, SDE, SWE, Software, Consultant" />
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="main">
-        <h2>Bhumika Saini</h2>
-        <h4>Software Engineer</h4>
-        <div id="social">
-          <a href="https://www.linkedin.com/in/BhumikaSaini" target="_blank"> LinkedIn </a>
-          <br />
-          <a href="https://www.github.com/BhumikaSaini" target="_blank"> GitHub </a>
-          <br />
-        </div>
-      </div>
-      <hr />
-      <div id="footer"> &copy; Bhumika Saini 2026 </div>
-    </div>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bhumika Saini | AI Engineer</title>
+
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --card: rgba(255, 255, 255, 0.75);
+      --border: rgba(0,0,0,0.08);
+      --text: #111827;
+      --muted: #6b7280;
+      --accent: #635bff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 80px 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      max-width: 920px;
+      margin-left: auto;
+      margin-right: auto;
+      background: var(--bg);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1000px;
+      height: 700px;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(255, 221, 87, 0.25), transparent 50%),
+        radial-gradient(circle at 80% 30%, rgba(255, 105, 180, 0.2), transparent 50%),
+        radial-gradient(circle at 50% 70%, rgba(180, 140, 255, 0.25), transparent 50%),
+        radial-gradient(circle at 60% 20%, rgba(99, 91, 255, 0.2), transparent 50%);
+      filter: blur(120px);
+      animation: floatGradient 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatGradient {
+      0%   { transform: translateX(-50%) translateY(0px) scale(1); }
+      100% { transform: translateX(-50%) translateY(40px) scale(1.05); }
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease forwards;
+      text-align: center;
+    }
+
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+    }
+
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .links {
+      margin-bottom: 60px;
+    }
+
+    .links a {
+      margin-right: 16px;
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      transition: all 0.25s ease;
+      background: white;
+    }
+
+    .links a:hover {
+      border-color: rgba(99,91,255,0.5);
+      box-shadow: 0 6px 20px rgba(99,91,255,0.15);
+      transform: translateY(-2px);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .project {
+      padding: 22px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .project::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      opacity: 0;
+      background: linear-gradient(120deg, transparent, rgba(99,91,255,0.15), transparent);
+      transition: opacity 0.3s ease;
+    }
+
+    .project:hover::after { opacity: 1; }
+
+    .project::after {
+      pointer-events: none;
+    }
+
+    .project:hover {
+      transform: translateY(-4px) scale(1.01);
+      border-color: rgba(99,91,255,0.4);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    .project-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .project-desc {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .project-desc a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.85rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .project-desc a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    footer {
+      margin-top: 70px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="fade-up">
+    <img src="https://avatars.githubusercontent.com/u/31132459" alt="Bhumika Saini" class="profile-image">
+    <h1>Bhumika Saini</h1>
+  </div>
+
+  <div class="links fade-up delay-1">
+    <a href="https://www.linkedin.com/in/BhumikaSaini" target="_blank">LinkedIn</a>
+    <a href="https://www.github.com/BhumikaSaini" target="_blank">GitHub</a>
+  </div>
+
+  <div class="fade-up delay-2">
+    <h2>Featured Work</h2>
+  </div>
+
+  <div id="projects" class="fade-up delay-3"></div>
+
+  <footer></footer>
+
+  <script>
+    const projects = [
+      {
+        name: "KOBy",
+        description: "Agentic AI library to troubleshoot & patch distributed systems",
+        links: [
+          { label: "demo video", href: "https://www.tiny.cc/koby-demo" },
+          { label: "architecture",    href: "https://www.tiny.cc/koby-design" },
+          { label: "code",            href: "https://www.tiny.cc/koby-code" }
+        ]
+      },
+      {
+        name: "Policy Pilot",
+        description: "RAG-enabled Health Insurance comparator & policy explainer",
+        links: [
+          { label: "demo video", href: "https://www.tiny.cc/policypilot-demo" },
+          { label: "architecture",    href: "https://www.tiny.cc/policypilot-design" },
+          { label: "code",            href: "https://www.tiny.cc/policypilot-code" }
+        ]
+      },
+      {
+        name: "Tool Arena",
+        description: "Benchmark comparing fine-tuned vs. distilled LLMs for Tool Calling tasks",
+        links: [
+          { label: "demo video", href: "https://www.tiny.cc/toolarena-demo" },
+          { label: "architecture",    href: "https://www.tiny.cc/toolarena-design" },
+          { label: "code",            href: "https://www.tiny.cc/toolarena-code" }
+        ]
+      },
+      {
+        name: "Open Source Contributions",
+        description: "",
+        contributions: [
+          { label: "OpenSearch",           href: "oss-opensearch.html" },
+          { label: "Google DSC",           href: "https://www.github.com/geekboysupreme/dscomg/pull/21" },
+          { label: "Microsoft PowerApps",  href: "https://www.github.com/MicrosoftDocs/powerapps-docs/pull/3001" },
+          { label: "Time to Leave",        href: "https://www.github.com/TTLApp/time-to-leave/pulls?q=is%3Apr+author%3Abhumikasaini" },
+          { label: "BioGears",             href: "https://www.github.com/BioGearsEngine/core/pull/33" }
+        ],
+        links: []
+      }
+    ];
+
+    const container = document.getElementById("projects");
+
+    projects.forEach(p => {
+      const div = document.createElement("div");
+      div.className = "project";
+
+      const linksHTML = p.links.length
+        ? p.links.map(l => `[ <a href="${l.href}" target="_blank">${l.label}</a> ]`).join(" ")
+        : "";
+
+      const contributionsHTML = p.contributions && p.contributions.length
+        ? p.contributions.map(c => `<a href="${c.href}" target="_blank">${c.label}</a>`).join(", ")
+        : "";
+
+      const bodyHTML = [p.description, linksHTML, contributionsHTML].filter(Boolean).join("<br>");
+
+      div.innerHTML = `
+        <div class="project-title">${p.name}</div>
+        ${bodyHTML ? `<div class="project-desc">${bodyHTML}</div>` : ""}
+      `;
+
+      container.appendChild(div);
+    });
+  </script>
+
+</body>
 </html>
